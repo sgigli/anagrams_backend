@@ -32,5 +32,5 @@ mongoose.connect('mongodb://localhost/anagram_app',{
   useUnifiedTopology: true
 });
 
-const port = 3000;
+const port = 8080;
 app.listen(port, () => console.log(`This app is listening on port ${port}`));
