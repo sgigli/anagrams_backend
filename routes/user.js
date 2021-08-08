@@ -3,7 +3,6 @@ const connectEnsureLogin = require('connect-ensure-login');
 
 module.exports = function(app, passport) {
   app.post("/sign_up", function(req, res) {
-    console.log(req.body)
     User.register({ email: req.body.email, username: req.body.username }, req.body.password)
     res.sendStatus(200)
   })
