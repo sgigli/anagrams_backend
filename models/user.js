@@ -7,6 +7,15 @@ const User = new Schema({
   email: String,
   username: String,
   password: String
+}, {
+  timestamps: true,
+  toObject: {
+    transform: (_doc, user) => {
+      delete user.hash
+      delete user.salt
+      return user
+    }
+  }
 });
 
 User.plugin(passportLocalMongoose);
